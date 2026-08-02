@@ -1,0 +1,180 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --radius: 0.5rem;
+
+    /* RAYAT Brand Palette — OKLCH raw L C H values */
+    /* Deep Emerald → primary */
+    --primary: 0.38 0.12 162;
+    --primary-foreground: 0.98 0 0;
+
+    /* Metallic Gold → accent */
+    --accent: 0.72 0.14 72;
+    --accent-foreground: 0.12 0 0;
+
+    /* Terracotta #b84c2c → secondary */
+    --secondary: 0.52 0.15 32;
+    --secondary-foreground: 0.98 0 0;
+
+    /* Warm sand #f5efe0 → background */
+    --background: 0.97 0.02 78;
+    --foreground: 0.14 0.02 30;
+
+    /* Card/UI surfaces */
+    --card: 0.995 0.005 78;
+    --card-foreground: 0.14 0.02 30;
+
+    --popover: 0.995 0.005 78;
+    --popover-foreground: 0.14 0.02 30;
+
+    /* Muted (light emerald-tinted grey) */
+    --muted: 0.93 0.02 162;
+    --muted-foreground: 0.45 0.03 162;
+
+    /* Border/Input */
+    --border: 0.88 0.04 78;
+    --input: 0.88 0.04 78;
+    --ring: 0.38 0.12 162;
+
+    /* Destructive */
+    --destructive: 0.55 0.22 27;
+    --destructive-foreground: 0.98 0 0;
+
+    /* Charts */
+    --chart-1: 0.38 0.12 162;
+    --chart-2: 0.72 0.14 72;
+    --chart-3: 0.52 0.15 32;
+    --chart-4: 0.65 0.12 140;
+    --chart-5: 0.6 0.18 55;
+
+    /* Sidebar */
+    --sidebar: 0.98 0.005 78;
+    --sidebar-foreground: 0.14 0.02 30;
+    --sidebar-primary: 0.38 0.12 162;
+    --sidebar-primary-foreground: 0.98 0 0;
+    --sidebar-accent: 0.93 0.02 162;
+    --sidebar-accent-foreground: 0.14 0.02 30;
+    --sidebar-border: 0.88 0.04 78;
+    --sidebar-ring: 0.38 0.12 162;
+
+    /* Brand custom tokens */
+    --brand-teal: 0.38 0.12 162;
+    --brand-teal-dark: 0.22 0.08 162;
+    --brand-teal-light: 0.55 0.10 162;
+    --brand-gold: 0.72 0.14 72;
+    --brand-terracotta: 0.52 0.15 32;
+    --brand-sand: 0.97 0.02 78;
+    --brand-sand-dark: 0.91 0.03 78;
+    /* Sandy gold from logo background */
+    --brand-sand-gold: 0.78 0.07 72;
+  }
+
+  .dark {
+    --background: 0.15 0.03 162;
+    --foreground: 0.95 0.01 78;
+    --card: 0.2 0.04 162;
+    --card-foreground: 0.95 0.01 78;
+    --popover: 0.2 0.04 162;
+    --popover-foreground: 0.95 0.01 78;
+    --primary: 0.55 0.10 162;
+    --primary-foreground: 0.12 0.02 162;
+    --secondary: 0.62 0.13 32;
+    --secondary-foreground: 0.98 0 0;
+    --muted: 0.25 0.04 162;
+    --muted-foreground: 0.65 0.04 162;
+    --accent: 0.72 0.14 72;
+    --accent-foreground: 0.12 0 0;
+    --destructive: 0.65 0.2 27;
+    --destructive-foreground: 0.98 0 0;
+    --border: 0.3 0.04 162;
+    --input: 0.3 0.04 162;
+    --ring: 0.55 0.10 162;
+    --chart-1: 0.55 0.10 162;
+    --chart-2: 0.72 0.14 72;
+    --chart-3: 0.62 0.13 32;
+    --chart-4: 0.65 0.12 140;
+    --chart-5: 0.6 0.18 55;
+    --sidebar: 0.18 0.04 162;
+    --sidebar-foreground: 0.95 0.01 78;
+    --sidebar-primary: 0.55 0.10 162;
+    --sidebar-primary-foreground: 0.12 0.02 162;
+    --sidebar-accent: 0.25 0.04 162;
+    --sidebar-accent-foreground: 0.95 0.01 78;
+    --sidebar-border: 0.3 0.04 162;
+    --sidebar-ring: 0.55 0.10 162;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'DM Sans', 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+  }
+
+  h1, h2, h3 {
+    font-family: 'Cinzel', 'Playfair Display', 'Georgia', serif;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  /* RTL font fallbacks — using system Arabic fonts since no Arabic fonts are bundled */
+  [dir="rtl"] body {
+    font-family: 'Tajawal', 'Arial', 'Helvetica', system-ui, sans-serif;
+  }
+
+  [dir="rtl"] h1,
+  [dir="rtl"] h2,
+  [dir="rtl"] h3 {
+    font-family: 'Amiri', 'Georgia', system-ui, serif;
+  }
+}
+
+@layer utilities {
+  .brand-teal { color: oklch(var(--brand-teal)); }
+  .bg-brand-teal { background-color: oklch(var(--brand-teal)); }
+  .bg-brand-teal-dark { background-color: oklch(var(--brand-teal-dark)); }
+  .bg-brand-sand { background-color: oklch(var(--brand-sand)); }
+  .bg-brand-sand-dark { background-color: oklch(var(--brand-sand-dark)); }
+  .bg-brand-sand-gold { background-color: oklch(var(--brand-sand-gold)); }
+  .brand-gold { color: oklch(var(--brand-gold)); }
+  .bg-brand-gold { background-color: oklch(var(--brand-gold)); }
+  .brand-terracotta { color: oklch(var(--brand-terracotta)); }
+  .bg-brand-terracotta { background-color: oklch(var(--brand-terracotta)); }
+  .text-brand-sand-gold { color: oklch(var(--brand-sand-gold)); }
+
+  .text-shadow-lg {
+    text-shadow: 0 2px 16px rgba(0,0,0,0.5), 0 1px 4px rgba(0,0,0,0.4);
+  }
+  .text-shadow-md {
+    text-shadow: 0 1px 8px rgba(0,0,0,0.4);
+  }
+
+  /* Strong outline for white text over busy backgrounds */
+  .text-outline {
+    text-shadow:
+      -1px -1px 0 rgba(0,0,0,0.85),
+       1px -1px 0 rgba(0,0,0,0.85),
+      -1px  1px 0 rgba(0,0,0,0.85),
+       1px  1px 0 rgba(0,0,0,0.85),
+       0 2px 12px rgba(0,0,0,0.6);
+  }
+  .text-outline-strong {
+    text-shadow:
+      -2px -2px 0 rgba(0,0,0,0.9),
+       2px -2px 0 rgba(0,0,0,0.9),
+      -2px  2px 0 rgba(0,0,0,0.9),
+       2px  2px 0 rgba(0,0,0,0.9),
+       0 3px 16px rgba(0,0,0,0.7);
+  }
+
+  .font-display {
+    font-family: 'Cinzel', 'Trajan Pro', 'Times New Roman', serif;
+  }
+}
