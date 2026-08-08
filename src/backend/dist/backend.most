@@ -1,0 +1,68 @@
+// Version: 4.0.0
+type AccessControlState__648451683 =
+  {
+    var adminAssigned : Bool;
+    userRoles : Map__386906547<Principal, UserRole__313635998>
+  };
+type ContactSubmission__117636219 =
+  {
+    message : Text;
+    senderEmail : Text;
+    senderName : Text;
+    timestamp : Time__30997584
+  };
+type ContactSubmission__390548495 =
+  {
+    message : Text;
+    senderEmail : Text;
+    senderName : Text;
+    timestamp : Time__30997584
+  };
+type Data__265875254<K, V> = {var count : Nat__58649523; kvs : [var ?(K, V)]};
+type Int__616954475 = Int;
+type Int__895066125 = Int__616954475;
+type Internal__161573640<K, V> =
+  {children : [var ?Node__430031793<K, V>]; data : Data__265875254<K, V>};
+type Leaf__1045638083<K, V> = {data : Data__265875254<K, V>};
+type List__1004628775<T> =
+  {
+    var blockIndex : Nat__58649523;
+    var blocks : [var [var ?T]];
+    var elementIndex : Nat__58649523
+  };
+type List__89170296<T> = List__1004628775<T>;
+type Map__13625999<K, V> =
+  {var root : Node__430031793<K, V>; var size : Nat__58649523};
+type Map__386906547<K, V> = Map__670138087<K, V>;
+type Map__670138087<K, V> = Map__13625999<K, V>;
+type Nat__58649523 = Nat__920180692;
+type Nat__920180692 = Nat;
+type NewActor__107440612 =
+  {
+    accessControlState : AccessControlState__648451683;
+    submissions : List__89170296<ContactSubmission__117636219>
+  };
+type Node__430031793<K, V> =
+  {#internal : Internal__161573640<K, V>; #leaf : Leaf__1045638083<K, V>};
+type OldActor__14821098 =
+  {submissions : List__89170296<ContactSubmission__117636219>};
+type Time__1031799312 = Int__895066125;
+type Time__30997584 = Time__1031799312;
+type UserRole__313635998 = {#admin; #guest; #user};
+type UserRole__91647283 = {#admin; #guest; #user};
+{
+  "20260808_193251" : (old : OldActor__14821098) -> NewActor__107440612
+}
+actor  {
+  stable accessControlState :
+    {
+      var adminAssigned : Bool;
+      userRoles : Map__386906547<Principal, UserRole__91647283>
+    };
+  stable submissions :
+    {
+      var blockIndex : Nat__58649523;
+      var blocks : [var [var ?ContactSubmission__390548495]];
+      var elementIndex : Nat__58649523
+    }
+};

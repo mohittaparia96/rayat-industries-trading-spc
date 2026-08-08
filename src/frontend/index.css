@@ -134,6 +134,19 @@
   [dir="rtl"] h3 {
     font-family: 'Amiri', 'Georgia', system-ui, serif;
   }
+
+  /* CJK font fallbacks for Chinese (Simplified) — LTR, applied via lang attribute */
+  [lang="zh"] body {
+    font-family: 'Noto Sans SC', 'PingFang SC', 'Microsoft YaHei',
+      'Hiragino Sans GB', 'Segoe UI', system-ui, sans-serif;
+  }
+
+  [lang="zh"] h1,
+  [lang="zh"] h2,
+  [lang="zh"] h3 {
+    font-family: 'Noto Serif SC', 'Source Han Serif SC', 'Songti SC',
+      'SimSun', 'Georgia', serif;
+  }
 }
 
 @layer utilities {

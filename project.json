@@ -1,0 +1,18 @@
+{
+  "overview": "RAYAT Industries SPC corporate showcase site with English, Arabic, and Chinese language support.",
+  "features": [
+    "Three-way language switcher (English / 中文 / عربي)",
+    "Full Chinese (Simplified) translations across all pages",
+    "Enlarged Arabic font size and word spacing in the scrolled top bar",
+    "Chinese brand name displayed between English and Arabic in the top bar and footer",
+    "CJK-capable font rendering for Chinese text"
+  ],
+  "category": "showcase",
+  "tags": [
+    "showcase",
+    "i18n",
+    "multilingual",
+    "corporate"
+  ],
+  "last_updated": "2026-08-08T21:00:17.798Z"
+}
