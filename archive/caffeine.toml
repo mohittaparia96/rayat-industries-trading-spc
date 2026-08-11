@@ -1,0 +1,15 @@
+# Archived caffeine project manifest
+# Moved from the active workspace as this repository is migrating away from Caffeine/ICP.
+# Original contents are preserved here for reference.
+
+manifest_version = "0.1.0"
+
+[project]
+id = "my-app"
+name = "my-app"
+
+[workspace]
+include = ["src/**"]
+
+[canisters.frontend]
+depends_on = ["backend"]
