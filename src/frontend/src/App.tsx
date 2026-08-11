@@ -3,7 +3,6 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Toaster } from "@/components/ui/sonner";
 import { Textarea } from "@/components/ui/textarea";
-import { useActor } from "@caffeineai/core-infrastructure";
 import { useMutation } from "@tanstack/react-query";
 import {
   ArrowRight,
@@ -47,7 +46,7 @@ import {
 import { AnimatePresence, motion } from "motion/react";
 import { useEffect, useState } from "react";
 import { toast } from "sonner";
-import { type Backend, createActor } from "./backend";
+//import { type Backend, createActor } from "./backend";
 
 // VideoBackground removed — external video CDNs are unreliable in production.
 // All sections now use static high-quality image backgrounds.
@@ -3755,7 +3754,7 @@ function NewsPage({
 // ─── CONTACT PAGE ──────────────────────────────────────────────────────────────
 function ContactForm({ lang }: { lang: Lang }) {
   const t = makeT(lang);
-  const { actor } = useActor<Backend>(createActor);
+  //const { actor } = useActor<Backend>(createActor);
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
@@ -3767,12 +3766,7 @@ function ContactForm({ lang }: { lang: Lang }) {
       email: string;
       message: string;
     }) => {
-      if (!actor) throw new Error("Service unavailable");
-      await (actor as any).submitContactForm(
-        data.name,
-        data.email,
-        data.message,
-      );
+      
     },
     onSuccess: () => {
       setSubmitted(true);
